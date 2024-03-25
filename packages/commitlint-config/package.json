@@ -1,0 +1,19 @@
+{
+  "name": "commitlint-config",
+  "version": "0.0.0",
+  "description": "commit 规范",
+  "author": "Asren <huazheleyoushang@163.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/commitlint-config.test.js"
+  }
+}
