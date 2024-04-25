@@ -28,9 +28,16 @@ export default defineConfig4CustomTheme({
           }
         },
         algolia: {},
-        // nav: [
-        //   { text: 'Nested', link: '/nested/', ariaLabel: 'Nested' }
-        // ],
+        nav: [
+          { text: 'Home', link: '/index.md' },
+          {
+            text: 'Code Spec',
+            items: [
+              { text: 'HTML Code Spec', link: '/coding/html.md' },
+              { text: 'CSS Code Spec', link: '/coding/css.md' },
+            ],
+          },
+        ],
         sidebar: {
           '/': [/* ... */],
           '/nested/': [/* ... */]
@@ -52,25 +59,22 @@ export default defineConfig4CustomTheme({
         },
         // 当前 locale 的 algolia docsearch 选项
         algolia: {},
-        // nav: [
-        //   { text: '嵌套', link: '/zh/nested/' }
-        // ],
+        nav: [
+          { text: '首页', link: '/index.md' },
+          {
+            text: '编码规范',
+            items: [
+              { text: 'HTML 编码规范', link: '/coding/html.md' },
+              { text: 'CSS 编码规范', link: '/coding/css.md' },
+            ],
+          },
+        ],
         sidebar: {
           '/zh/': [/* ... */],
           '/zh/nested/': [/* ... */]
         }
       }
     },
-    nav: [
-      { text: '首页', link: '/index.md' },
-      {
-        text: '编码规范',
-        items: [
-          { text: 'HTML 编码规范', link: '/coding/html.md' },
-          { text: 'CSS 编码规范', link: '/coding/css.md' },
-        ],
-      },
-    ],
     sidebar: [
       {
         title: '编码规范',
