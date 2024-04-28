@@ -1,13 +1,12 @@
 {
   "name": "stylelint-fe-lint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS规范",
   "main": "index.js",
   "keywords": [
     "fe-lint",
     "stylelint"
   ],
-  
   "scripts": {
     "test": "jest"
   },

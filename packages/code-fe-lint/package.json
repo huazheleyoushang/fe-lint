@@ -1,7 +1,7 @@
 {
   "name": "code-fe-lint",
   "description": "前端工程化编码规范",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
   "scripts": {
@@ -14,9 +14,6 @@
   ],
   "engines": {
     "node": "^14.17.0 || >=16.0.0"
-  },
-  "dependencies": {
-    
   },
   "devDependencies": {
     "@types/command-exists": "^1.2.0",
@@ -37,5 +34,4 @@
   },
   "anchor": "Asren",
   "homepage": ""
-
 }
