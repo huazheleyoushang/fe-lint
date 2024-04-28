@@ -20,7 +20,7 @@ export default defineConfig4CustomTheme({
         selectText: 'Languages',
         label: 'English',
         ariaLabel: 'Languages',
-        editLinkText: 'Edit this page on GitHub',
+        editLinkText: 'https://github.com/huazheleyoushang/fe-lint',
         serviceWorker: {
           updatePopup: {
             message: "New content is available.",
@@ -35,6 +35,7 @@ export default defineConfig4CustomTheme({
             items: [
               { text: 'HTML Code Spec', link: '/coding/html.md' },
               { text: 'CSS Code Spec', link: '/coding/css.md' },
+              { text: 'Java Script Code Spec', link: '/coding/javascript.md' },
             ],
           },
         ],
@@ -49,7 +50,7 @@ export default defineConfig4CustomTheme({
         // 该语言在下拉菜单中的标签
         label: '简体中文',
         // 编辑链接文字
-        editLinkText: '在 GitHub 上编辑此页',
+        editLinkText: 'https://github.com/huazheleyoushang/fe-lint',
         // Service Worker 的配置
         serviceWorker: {
           updatePopup: {
@@ -66,39 +67,34 @@ export default defineConfig4CustomTheme({
             items: [
               { text: 'HTML 编码规范', link: '/coding/html.md' },
               { text: 'CSS 编码规范', link: '/coding/css.md' },
+              { text: 'Java Script 编码规范', link: '/coding/javascript.md' },
             ],
           },
         ],
-        sidebar: {
-          '/zh/': [/* ... */],
-          '/zh/nested/': [/* ... */]
-        }
+        sidebar: [
+          {
+            title: '编码规范',
+            children: [
+              {
+                title: 'HTML 编码规范',
+                path: '/coding/html.md',
+              },
+              {
+                title: 'CSS 编码规范',
+                path: '/coding/css.md',
+              },
+              {
+                title: 'Java Script 编码规范',
+                path: '/coding/javascript.md',
+              }
+            ],
+          },
+          {
+            title: '模版规范',
+          },
+        ]
       }
     },
-    sidebar: [
-      {
-        title: '编码规范',
-        children: [
-          {
-            title: 'HTML 编码规范',
-            path: '/coding/html.md',
-          },
-          {
-            title: 'CSS 编码规范',
-            path: '/coding/css.md',
-          },
-        ],
-      },
-      {
-        title: '工程规范',
-        children: [
-          {
-            title: '文档规范',
-            path: '/coding/css.md',
-          },
-        ],
-      },
-    ],
     logo: '/images/logo.png',
     repo: 'huazheleyoushang/fe-lint',
     searchMaxSuggestions: 10,
