@@ -10,5 +10,15 @@ describe('rules-validate.test.js', () => {
       files: filePaths,
       fix: false,
     });
+
+    if (result && result.errored) {
+      const filesResult = JSON.parse(result.output || '[]') || [];
+      filesResult.forEach((fileResult) => {
+        console.log(`-=-=- ${filePaths} -=-=-`);
+        console.log(fileResult.warnings);
+      });
+
+      assert.ok(filesResult.length !== 0);
+    }
   })
 })
