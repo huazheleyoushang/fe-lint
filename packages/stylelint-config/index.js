@@ -17,6 +17,7 @@ module.exports = {
         ignore: ['consecutive-duplicates-with-different-values']
       }
     ],
+    
     'declaration-block-no-shorthand-property-overrides': true,
     'font-family-no-duplicate-names': true,
     'function-calc-no-unspaced-operator': true,
