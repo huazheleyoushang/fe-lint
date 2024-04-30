@@ -1,6 +1,6 @@
 {
   "name": "commitlint-fe-lint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Git 提交规范",
   "main": "index.js",
   "keywords": [
