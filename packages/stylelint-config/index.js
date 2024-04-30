@@ -17,13 +17,13 @@ module.exports = {
         ignore: ['consecutive-duplicates-with-different-values']
       }
     ],
-    'declaration-block-no-shorthand-property-override': true,
+    'declaration-block-no-shorthand-property-overrides': true,
     'font-family-no-duplicate-names': true,
     'function-calc-no-unspaced-operator': true,
     'function-linear-gradient-no-nonstandard-direction': true,
     'keyframe-declaration-no-important': true,
     'media-feature-name-no-unknown': true,
-    'no-descending-specificity': null, // @reason 实际有很多这样用的，且多数人熟悉 css 优先级
+    'no-descending-specificity': null,
     'no-duplicate-at-import-rules': true,
     'no-duplicate-selectors': true,
     'no-empty-source': null,

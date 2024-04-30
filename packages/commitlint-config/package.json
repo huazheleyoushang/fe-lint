@@ -1,0 +1,16 @@
+{
+  "name": "commitlint-fe-lint",
+  "version": "1.0.3",
+  "description": "Git 提交规范",
+  "main": "index.js",
+  "keywords": [
+    "fe-lint",
+    "commitlint"
+  ],
+  "author": "Asren",
+  "homepage": "https://github.com/huazheleyoushang/fe-lint",
+  "license": "ISC",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
+}
