@@ -27,7 +27,7 @@ module.exports = {
     // generator 函数的 * 号前面无空格，后面有一个空格
     'generator-star-spacing': ['error', { before: false, after: true }],
 
-     /**
+    /**
      * 不允许修改类声明的变量
      * @see http://eslint.org/docs/rules/no-class-assign
      */
@@ -37,7 +37,7 @@ module.exports = {
      * 禁止使用可能与比较混淆的箭头函数
      * @see http://eslint.org/docs/rules/no-confusing-arrow
      */
-    'no-confusing-arrow': [ 'error', {
+    'no-confusing-arrow': ['error', {
       allowParens: true,
     }],
 
@@ -104,7 +104,7 @@ module.exports = {
     ],
 
     // 优先使用 const，只有当变量会被重新赋值时才使用 let
-    'prefer-const': [ 'error', {
+    'prefer-const': ['error', {
       destructuring: 'all',
       ignoreReadBeforeAssign: true,
     }],
@@ -162,7 +162,6 @@ module.exports = {
     'template-curly-spacing': 'warn',
 
     // yield* 表达式的 * 号前面无空格，后面有一个空格
-    'yield-star-spacing': ['error', 'after'],    
-
-  }
-}
+    'yield-star-spacing': ['error', 'after'],
+  },
+};
