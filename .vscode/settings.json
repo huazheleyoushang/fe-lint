@@ -9,6 +9,7 @@
     "copyfiles",
     "execa",
     "huazheleyoushang",
+    "nocheck",
     "preinstall",
     "proptypes",
     "unspaced",
