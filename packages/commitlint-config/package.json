@@ -9,6 +9,10 @@
   ],
   "author": "Asren",
   "homepage": "https://github.com/huazheleyoushang/fe-lint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huazheleyoushang/fe-lint.git"
+  },
   "license": "ISC",
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
