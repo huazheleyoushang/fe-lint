@@ -24,6 +24,8 @@ link: <https://github.com/huazheleyoushang/fe-lint/tree/master/packages/stylelin
 ## :star: eslint 规范
 
 [eslint-fe-lint]
-link: <https://pd.feelingtech.net:9443/FLProduct/FeelingFrontWeb/fe-code-eslint/-/tree/master/packages/eslint-config>
+link: <https://github.com/huazheleyoushang/fe-lint/tree/master/packages/eslint-config>
 
 ## 🌛 项目目的
+
+统一开发规范，减少项目配置
