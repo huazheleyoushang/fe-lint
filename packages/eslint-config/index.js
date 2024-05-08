@@ -6,6 +6,7 @@ module.exports = {
     './rules/base/variables',
     './rules/base/strict.js',
     './rules/base/es6.js',
+    './rules/imports.js',
   ].map(require.resolve),
   parser: '@babel/eslint-parser',
   // 规则入口配置

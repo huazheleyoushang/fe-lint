@@ -68,6 +68,8 @@ export default defineConfig4CustomTheme({
               { text: 'HTML 编码规范', link: '/coding/html.md' },
               { text: 'CSS 编码规范', link: '/coding/css.md' },
               { text: 'Java Script 编码规范', link: '/coding/javascript.md' },
+              { text: 'Node 编码规范', link: '/coding/node.md' },
+              { text: 'Vue 编码规范', link: '/coding/vue.md' },
             ],
           },
         ],
@@ -86,6 +88,14 @@ export default defineConfig4CustomTheme({
               {
                 title: 'Java Script 编码规范',
                 path: '/coding/javascript.md',
+              },
+              {
+                title: 'Node 编码规范',
+                path: '/coding/node.md',
+              },
+              {
+                title: 'Vue 编码规范',
+                path: '/coding/vue.md',
               }
             ],
           },

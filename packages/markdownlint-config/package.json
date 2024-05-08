@@ -1,0 +1,22 @@
+{
+  "name": "markdownlint-fe-lint",
+  "description": "markdown 文档规范",
+  "version": "1.0.5",
+  "main": "index.json",
+  "keywords": [
+    "fe-lint",
+    "markdownlint",
+    "markdown",
+    "node"    
+  ],
+  "author": "Asren",
+  "homepage": "https://github.com/huazheleyoushang/fe-lint",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huazheleyoushang/fe-lint.git"
+  },
+  "peerDependencies": {
+    "markdownlint": "^0.28.1"
+  }
+}
