@@ -22,7 +22,7 @@ module.exports = {
 };
 ```
 
-## 设置 git hook
+## ⚙️ 设置 git hook
 
 可通过 [husky](https://www.npmjs.com/package/husky) 设置在 `git commit` 时触发 `commitlint`。
 

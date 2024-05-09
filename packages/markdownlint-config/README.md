@@ -1,4 +1,4 @@
-# markdownlint-config-encode
+# markdownlint-fe-lint
 
 📚 文档 规范
 

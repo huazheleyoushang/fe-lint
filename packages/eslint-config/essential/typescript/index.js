@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     '../index',
-    '../rules/typescript',
+    '../../rules/typescript',
+    '../rules/ts-blacklist',
   ].map(require.resolve),
 };

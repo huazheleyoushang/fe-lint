@@ -7,6 +7,7 @@
     "commitlint",
     "conventionalcommits",
     "copyfiles",
+    "enya",
     "execa",
     "huazheleyoushang",
     "nocheck",

@@ -55,5 +55,89 @@ describe('eslint-config/ts', () => {
   it('validate-ts-config.test.js/vue', async () => {
     const configPath = './typescript/vue.js';
     const filePath = path.join(__dirname, './fixtures/ts-vue.vue');
+
+    const cli = new eslint.ESLint({
+      overrideConfigFile: configPath,
+      useEslintrc: false,
+      ignore: false,
+      // TS 配置
+      overrideConfig: {
+        parserOptions: {
+          project: path.join(__dirname, './fixtures/tsconfig.json'),
+        },
+      },
+    });
+
+    const config = await cli.calculateConfigForFile(filePath);
+    assert.ok(isObject(config));
+
+    // 验证 tslint 规则是否生效
+    const results = await cli.lintFiles([filePath]);
+    assert.equal(sumBy(results, 'fatalErrorCount'), 0);
+    assert.notEqual(sumBy(results, 'errorCount'), 0);
+    assert.notEqual(sumBy(results, 'warningCount'), 0);
+
+    // 验证 eslint-config-vue， @typescript/-eslint 是否正常
+    const { messages } = results[0];
+    const errorReport = messages.filter((result) => {
+      return result.ruleId && result.ruleId.indexOf('vue/') !== -1;
+    });
+    const errorReportTs = messages.filter((result) => {
+      return result.ruleId && result.ruleId.indexOf('@typescript-eslint/') !== -1;
+    });
+
+    assert.notEqual(errorReport.length, 0);
+    assert.notEqual(errorReportTs.length, 0);
+  });
+
+  /**
+   * 降级 react 校验
+   */
+  it('validate-ts-config.test.js/essential/react', async () => {
+    const configPath = './essential/typescript/react.js';
+    const filePath = path.join(__dirname, './fixtures/ts-react.tsx');
+
+    const cli = await new eslint.ESLint({
+      overrideConfigFile: configPath,
+      useEslintrc: false,
+      ignore: false,
+      overrideConfig: {
+        parserOptions: {
+          project: path.join(__dirname, './fixtures/tsconfig.json'),
+        },
+      },
+    });
+    const config = await cli.calculateConfigForFile(filePath);
+    assert.ok(isObject(config));
+
+    // 验证配置 是否正确
+    const results = await cli.lintFiles([filePath]);
+    assert.equal(sumBy(results, 'fatalErrorCount'), 0);
+    assert.notEqual(sumBy(results, 'errorCount'), 0);
+    assert.notEqual(sumBy(results, 'warningCount'), 0);
+
+    // 验证 tsx 是否正确
+    const { messages } = results[0];
+    const errorReport = messages.filter((result) => {
+      return result.ruleId && result.ruleId.indexOf('react/') !== -1;
+    });
+    assert.notEqual(errorReport.length, 0);
+
+    const errorReportTs = messages.filter((result) => {
+      return result.ruleId && result.ruleId.indexOf('@typescript-eslint/') !== -1;
+    });
+    assert.notEqual(errorReportTs.length, 0);
+
+    // 验证 @typescript-eslint/semi 是否降级
+    const errorSemi = messages.filter((result) => {
+      return result.ruleId === '@typescript-eslint/semi';
+    });
+    assert.equal(errorSemi.length, 0);
+
+    // 验证 指定规则已关闭 react/jsx-indent
+    const errorIndent = messages.filter((result) => {
+      return result.ruleId && result.ruleId === 'react/jsx-indent';
+    });
+    assert.equal(errorIndent.length, 0);
   });
 });

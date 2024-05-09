@@ -154,4 +154,41 @@ describe('eslint-config/js', () => {
     // 验证已关闭的 link 规则是否校验正常，以 node/exports-style 为例
     assert.strictEqual(ruleIds.includes('node/exports-style'), false);
   });
+
+  /**
+   * 规则降级(只有警告，没有强制错误) 验证
+   */
+  it('validate-js-config.test.js/essential', async () => {
+    const configPath = './essential/index.js';
+    const filePath = path.join(__dirname, './fixtures/index.js');
+
+    const cli = await new eslint.ESLint({
+      overrideConfigFile: configPath,
+      useEslintrc: false,
+      ignore: false,
+    });
+
+    const config = await cli.calculateConfigForFile(filePath);
+    assert.ok(isObject(config));
+
+    // 验证eslint 是否生效
+    const results = await cli.lintFiles([filePath]);
+    assert.equal(sumBy(results, 'fatalErrorCount'), 0);
+    assert.equal(sumBy(results, 'errorCount'), 0);
+    assert.notEqual(sumBy(results, 'warningCount'), 0);
+
+    // 验证黑名单中的规则是否关闭
+    const { messages } = results[0];
+
+    const errorRule = messages.filter((result) => {
+      return result.ruleId === 'semi';
+    });
+    assert.equal(errorRule.length, 0);
+
+    // 验证 comma-spacing 降级
+    const errorCommaSpacing = messages.filter((result) => {
+      return result.ruleId === 'comma-spacing';
+    });
+    assert.equal(errorCommaSpacing[0].severity, 1);
+  });
 });
