@@ -1,13 +1,13 @@
 {
   "name": "markdownlint-fe-lint",
   "description": "markdown 文档规范",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "main": "index.json",
   "keywords": [
     "fe-lint",
     "markdownlint",
     "markdown",
-    "node"    
+    "node"
   ],
   "author": "Asren",
   "homepage": "https://github.com/huazheleyoushang/fe-lint",
