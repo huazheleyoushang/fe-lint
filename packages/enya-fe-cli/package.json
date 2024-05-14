@@ -10,7 +10,6 @@
     "dev": "npm run copyfiles && tsc -w",
     "build": "npm run copyfiles && tsc",
     "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
-    "test": "npm run build && jest",
     "coverage": "nyc jest --silent --forceExit",
     "prepublishOnly": "npm run test"
   },
@@ -94,5 +93,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/huazheleyoushang/fe-lint.git"
-  }
+  },
+  "gitHead": "78a68d8f20ed0de9d9e643a5a6c19dad41ab4603"
 }
