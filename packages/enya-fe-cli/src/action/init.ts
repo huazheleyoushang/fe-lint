@@ -9,6 +9,7 @@ import { PKG_NAME, PROJECT_TYPES } from '../utils/constants';
 import type { InitOptions, PKG } from '../type';
 import log from '../utils/log';
 import conflictResolve from '../utils/conflict-resolve';
+import generateTemplate from '../utils/generate-template';
 
 // 操作步骤
 let step = 0
@@ -73,8 +74,6 @@ const chooseEnablePrettier = async (): Promise<boolean> => {
 }
 
 export default async (options: InitOptions) => {
-  const { name } = options;
-  console.log(name);
   const cwd = options.cwd || process.cwd();
   const isTest = process.env.NODE_ENV === 'test';
   const checkVersionUpdate = options.checkVersionUpdate || false;
@@ -86,15 +85,16 @@ export default async (options: InitOptions) => {
   let pkg: PKG = fs.readJSONSync(pkgPath);
 
   // 版本检查
-  if (!isTest && checkVersionUpdate) {
-    await update();
-  }
+  // TODO:
+  // if (!isTest && checkVersionUpdate) {
+  //   await update();
+  // }
 
   // 默认 enableEslint true
-  if (typeof options.enableEslint === 'boolean') {
-    config.enableEslint = options.enableEslint
+  if (typeof options.enableESLint === 'boolean') {
+    config.enableESLint = options.enableESLint;
   } else {
-    config.enableEslint = true
+    config.enableESLint = true;
   }
 
   if (options.eslintType && PROJECT_TYPES.find((choose) => choose.value === options.eslintType)) {
@@ -105,61 +105,60 @@ export default async (options: InitOptions) => {
 
   // 初始化 stylelint
   if (typeof options.enableStylelint === 'boolean') {
-    config.enableStylelint = options.enableEslint
+    config.enableStylelint = options.enableStylelint
   } else {
     config.enableStylelint = await chooseEnableStyle(true)
   }
 
   // 初始化 markdownlint
   if (typeof options.enableMarkdownlint === 'boolean') {
-    config.enableMarkdownlint = options.enableEslint
+    config.enableMarkdownlint = options.enableMarkdownlint
   } else {
     config.enableMarkdownlint = await chooseEnableMarkdown()
   }
 
   // 初始化 prettier
   if (typeof options.enablePrettier === 'boolean') {
-    config.enablePrettier = options.enableEslint
+    config.enablePrettier = options.enablePrettier
   } else {
     config.enablePrettier = await chooseEnablePrettier()
   }
 
-  console.log('config', config)
-
   if (!isTest) {
-    // 检查依赖配置
-    // TODO:
-    const pkg = await conflictResolve(cwd, options.rewriteConfig)
-    console.log('pkg--', pkg)
+    // 检查依赖配置-重写
+    const pkg = await conflictResolve(cwd, options.rewriteConfig);
     if (!disableNpmInstall) {
       // 初始化后，安装依赖
-      log.info('🚀安装依赖...')
-      const npm = await npmType
+      log.info('🚀 安装依赖...');
+      const npm = await npmType;
 
-      // spawn.sync(npm, ['i', '-D', PKG_NAME], {stdio: 'inherit', cwd})
-      log.success('📦安装成功：D')
+      spawn.sync(npm, ['i', '-D', PKG_NAME], {stdio: 'inherit', cwd});
+      log.success('📦 安装成功');
 
     }
   }
 
-  return
+  // 更新 pkg.json
+  pkg = fs.readJSONSync(pkgPath);
 
-  // 写入 package.json
-  pkg = {
-   ...pkg,
-   ...config,
+  // 新增script命令
+  if (!pkg.scripts) {
+    pkg.scripts = {};
   }
-  fs.writeJSONSync(pkgPath, pkg, {
-    spaces: 2,
-  })
-
-  // 写入.eslintrc.js
-  if (config.enableEslint) {
-    const eslintPath = path.resolve(cwd, '.eslintrc.js');
-    const eslintTplPath = path.resolve(__dirname, '../template/eslintrc.js');
-    fs.copySync(eslintTplPath, eslintPath);
+  if (!pkg.scripts[`${PKG_NAME}-scan`]) {
+    pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
+  }
+  if (!pkg.scripts[`${PKG_NAME}-fix`]) {
+    pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
   }
 
-  // 写入.stylelintrc.js
 
+  // 写入配置
+  log.info('写入配置中...');
+  await generateTemplate(cwd, config);
+  log.success('✅ 写入配置成功');
+
+  // 完成信息
+  const logs = [`${PKG_NAME} 初始化完成`].join('\r\n');
+  log.success(logs);
 }

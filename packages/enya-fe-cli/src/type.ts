@@ -18,13 +18,13 @@ export interface InitOptions {
   // 检查版本是否需要升级
   checkVersionUpdate: boolean;
   // 项目名称
-  name: string;
+  name?: string;
   // 是否需要写入 lint 配置
   rewriteConfig?: boolean;
   // eslint 类型
   eslintType?: string;
-  // 是否启用 eslint
-  enableEslint?: boolean;
+  // 是否启用 ESlint
+  enableESLint?: boolean;
   // 是否启用 stylelint
   enableStylelint?: boolean;
   // 是否启用 markdownlint
