@@ -16,6 +16,21 @@ export const PKG_NAME = pkg.name;
 // 包版本
 export const PKG_VERSION = pkg.version;
 
+export const PLATEFORM_TYPE: Array<{name: string, value: string}> = [
+  {
+    name: 'PC',
+    value: 'pc',
+  },
+  {
+    name: 'H5',
+    value: 'h5',
+  },
+  {
+    name: '小程序',
+    value: 'applet',
+  }
+]
+
 /**
  * 项目类型 Type
  */

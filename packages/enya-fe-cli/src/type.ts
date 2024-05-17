@@ -13,12 +13,21 @@ export interface PKG {
   [key: string]: any;
 }
 
+export interface CreateOptions {
+  // 项目名称
+  name: string;
+  cwd: string;
+  // 是否启用 ESlint
+  enableESLint?: boolean;
+  // 是否启用 stylelint
+  enableStylelint?: boolean;
+  // 是否自动下载依赖
+  isInstall?: boolean;
+}
 export interface InitOptions {
   cwd: string,
   // 检查版本是否需要升级
   checkVersionUpdate: boolean;
-  // 项目名称
-  name?: string;
   // 是否需要写入 lint 配置
   rewriteConfig?: boolean;
   // eslint 类型

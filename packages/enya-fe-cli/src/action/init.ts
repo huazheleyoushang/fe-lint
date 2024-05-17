@@ -129,11 +129,11 @@ export default async (options: InitOptions) => {
     const pkg = await conflictResolve(cwd, options.rewriteConfig);
     if (!disableNpmInstall) {
       // 初始化后，安装依赖
-      log.info('🚀 安装依赖...');
+      log.info('🚀  安装依赖...');
       const npm = await npmType;
 
       spawn.sync(npm, ['i', '-D', PKG_NAME], {stdio: 'inherit', cwd});
-      log.success('📦 安装成功');
+      log.success('📦  安装成功');
 
     }
   }
@@ -156,7 +156,7 @@ export default async (options: InitOptions) => {
   // 写入配置
   log.info('写入配置中...');
   await generateTemplate(cwd, config);
-  log.success('✅ 写入配置成功');
+  log.success('✅  写入配置成功');
 
   // 完成信息
   const logs = [`${PKG_NAME} 初始化完成`].join('\r\n');
