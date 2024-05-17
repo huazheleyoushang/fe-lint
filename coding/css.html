@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS 编码规范 | 编码规范</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="前端编码规范工程化">
+    
+    <link rel="preload" href="/fe-lint/assets/css/0.styles.f49a216a.css" as="style"><link rel="preload" href="/fe-lint/assets/js/app.2aaa5835.js" as="script"><link rel="preload" href="/fe-lint/assets/js/3.b657e663.js" as="script"><link rel="preload" href="/fe-lint/assets/js/2.5a41274c.js" as="script"><link rel="preload" href="/fe-lint/assets/js/1.6e6744fa.js" as="script"><link rel="preload" href="/fe-lint/assets/js/23.acbc6481.js" as="script"><link rel="prefetch" href="/fe-lint/assets/js/11.fd8ce0ee.js"><link rel="prefetch" href="/fe-lint/assets/js/12.281cd6f1.js"><link rel="prefetch" href="/fe-lint/assets/js/13.16c06e2b.js"><link rel="prefetch" href="/fe-lint/assets/js/14.549d10d4.js"><link rel="prefetch" href="/fe-lint/assets/js/15.314c8054.js"><link rel="prefetch" href="/fe-lint/assets/js/16.cc83cd09.js"><link rel="prefetch" href="/fe-lint/assets/js/17.a6acf995.js"><link rel="prefetch" href="/fe-lint/assets/js/18.4a2b4f25.js"><link rel="prefetch" href="/fe-lint/assets/js/19.6f4117fe.js"><link rel="prefetch" href="/fe-lint/assets/js/20.b691697a.js"><link rel="prefetch" href="/fe-lint/assets/js/21.cde724c7.js"><link rel="prefetch" href="/fe-lint/assets/js/22.c7307be2.js"><link rel="prefetch" href="/fe-lint/assets/js/24.923f5c57.js"><link rel="prefetch" href="/fe-lint/assets/js/25.050ec097.js"><link rel="prefetch" href="/fe-lint/assets/js/26.f1632691.js"><link rel="prefetch" href="/fe-lint/assets/js/27.ffad3847.js"><link rel="prefetch" href="/fe-lint/assets/js/28.42049a71.js"><link rel="prefetch" href="/fe-lint/assets/js/29.c731431e.js"><link rel="prefetch" href="/fe-lint/assets/js/4.ce8bce31.js"><link rel="prefetch" href="/fe-lint/assets/js/5.65088c08.js"><link rel="prefetch" href="/fe-lint/assets/js/6.92cf0ff0.js"><link rel="prefetch" href="/fe-lint/assets/js/7.f2fe233c.js"><link rel="prefetch" href="/fe-lint/assets/js/8.fe4ff2d2.js"><link rel="prefetch" href="/fe-lint/assets/js/vendors~docsearch.3a90a188.js">
+    <link rel="stylesheet" href="/fe-lint/assets/css/0.styles.f49a216a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fe-lint/" class="home-link router-link-active"><img src="/fe-lint/images/logo.png" alt="编码规范" class="logo"> <span class="site-name can-hide">编码规范</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/fe-lint/index.html" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编码规范" class="dropdown-title"><span class="title">编码规范</span> <span class="arrow down"></span></button> <button type="button" aria-label="编码规范" class="mobile-dropdown-title"><span class="title">编码规范</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe-lint/coding/html.html" class="nav-link">
+  HTML 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/javascript.html" class="nav-link">
+  Java Script 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/node.html" class="nav-link">
+  Node 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/vue.html" class="nav-link">
+  Vue 编码规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe-lint/coding/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/huazheleyoushang/fe-lint" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/fe-lint/index.html" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编码规范" class="dropdown-title"><span class="title">编码规范</span> <span class="arrow down"></span></button> <button type="button" aria-label="编码规范" class="mobile-dropdown-title"><span class="title">编码规范</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe-lint/coding/html.html" class="nav-link">
+  HTML 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/javascript.html" class="nav-link">
+  Java Script 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/node.html" class="nav-link">
+  Node 编码规范
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/coding/vue.html" class="nav-link">
+  Vue 编码规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fe-lint/coding/css.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/fe-lint/en/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/huazheleyoushang/fe-lint" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>编码规范</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fe-lint/coding/html.html" class="sidebar-link">HTML 编码规范</a></li><li><a href="/fe-lint/coding/css.html" aria-current="page" class="active sidebar-link">CSS 编码规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fe-lint/coding/css.html#css-编码规范" class="sidebar-link">CSS 编码规范</a></li></ul></li><li><a href="/fe-lint/coding/javascript.html" class="sidebar-link">Java Script 编码规范</a></li><li><a href="/fe-lint/coding/node.html" class="sidebar-link">Node 编码规范</a></li><li><a href="/fe-lint/coding/vue.html" class="sidebar-link">Vue 编码规范</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>模版规范</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="css-编码规范"><a href="#css-编码规范" class="header-anchor">#</a> CSS 编码规范</h2> <p>规范包括 <code>CSS</code> 及其预编译语言（<code>Sass</code>、<code>Less</code>）的编码风格，部分规则可通过 <a href="https://stylelint.io/" target="_blank" rel="noopener noreferrer">stylelint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 规则工具</p> <h3 id="编码风格"><a href="#编码风格" class="header-anchor">#</a> 编码风格</h3> <ul><li>1.1【强制】所有声明都应该以分号结尾，不能省略</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.content</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> 15px
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.content</span> <span class="token punctuation">{</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">padding-left</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.2【推荐】使用两个空格缩进，不要使用4个空格</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.box</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.3【推荐】选择器和 <code>{</code> 之间保留一个空格</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.select</span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.select</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.4【推荐】属性名和 <code>:</code> 之前无空格，<code>:</code> 和属性值之间保留一个空格</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.select</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span> <span class="token punctuation">:</span>color<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.select</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>1.5【推荐】<code>&gt;</code>、<code>+</code> 等组合器前后各保留一个空格</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;&gt;.select</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box+.div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.container</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp; &gt; .select</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.box + .div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>1.6.【推荐】十六进制使用小写字母</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.main</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #FFF<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.main</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.7.【建议】不要使用 <code>id</code> 选择器</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">#spell</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.spell</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.8.【推荐】属性值为 0 的时候，可以省略单位</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.modal</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.modal</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>1.9【参考】使用多个选择器时，每个选择器应该单独成行</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.selector, .selector-secondary, .selector-third</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">.selector,
+.selector-secondary,
+.selector-third</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>2.0【建议】不允许无效的注释</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  //<span class="token property">color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* a { color: pink;  } */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* color: pink; */</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>2.1【推荐】函数计算不需要空格</li></ul> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>1px + 2px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good */</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>1px+2px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">a</span> <span class="token punctuation">{</span> <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token function">atan</span><span class="token punctuation">(</span>-2+1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/fe-lint/coding/html.html" class="prev">
+        HTML 编码规范
+      </a></span> <span class="next"><a href="/fe-lint/coding/javascript.html">
+        Java Script 编码规范
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/fe-lint/assets/js/app.2aaa5835.js" defer></script><script src="/fe-lint/assets/js/3.b657e663.js" defer></script><script src="/fe-lint/assets/js/2.5a41274c.js" defer></script><script src="/fe-lint/assets/js/1.6e6744fa.js" defer></script><script src="/fe-lint/assets/js/23.acbc6481.js" defer></script>
+  </body>
+</html>
