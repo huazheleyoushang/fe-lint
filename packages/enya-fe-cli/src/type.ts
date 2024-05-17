@@ -13,9 +13,16 @@ export interface PKG {
   [key: string]: any;
 }
 
+export interface CONFIG {
+  projectName: string;
+  cwd?: string;
+  projectType?: string;
+  plateformType?: string;
+}
+
 export interface CreateOptions {
   // 项目名称
-  name: string;
+  projectName: string;
   cwd: string;
   // 是否启用 ESlint
   enableESLint?: boolean;

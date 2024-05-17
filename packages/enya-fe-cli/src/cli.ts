@@ -72,13 +72,13 @@ program
     await update(true)
   });
 
-program.command('create <name>')
+program.command('create <projectName>')
   .description('✨  创建新项目')
   .option('拉取项目模版，集成前端规范')
-  .action( async (name) => {
-    console.log('[Project Name] >', name)
+  .action( async (projectName) => {
+    console.log('[Project Name] >', projectName)
     await create({
-      name,
+      projectName,
       cwd,
     })
   });
