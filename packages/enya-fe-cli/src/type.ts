@@ -1,3 +1,6 @@
+import { ESLint } from 'eslint';
+import stylelint from 'stylelint';
+import markdownlint from 'markdownlint';
 /**
  * 类型定义
  */
@@ -49,4 +52,62 @@ export interface InitOptions {
   enablePrettier?: boolean;
   // 是否初始化后，安装依赖
   disableNpmInstall?: boolean;
+}
+
+export interface Config {
+  // 是否启用 ESLint
+  enableESLint?: boolean;
+  // 是否启用 stylelint
+  enableStylelint?: boolean;
+  // 是否启用 markdown lint
+  enableMarkdownlint?: boolean;
+  // 是否启用 prettier
+  enablePrettier?: boolean;
+  // ESLint 配置项
+  eslintOptions?: ESLint.Options;
+  // stylelint 配置项
+  stylelintOptions?: stylelint.LinterOptions;
+  // markdownlint 配置项
+  markdownlintOptions?: markdownlint.Options;
+}
+
+// 扫描项目类型
+export interface ScanOptions {
+  // 工程目录
+  cwd: string;
+  // 进行规范扫描的目录
+  include: string;
+  // 扫描文件列表
+  files?: string[];
+  quiet?: boolean;
+  ignore?: boolean;
+  // 自动修复
+  fix?: boolean;
+  // 生成报告
+  outputReport?: boolean;
+  config?: Config,
+}
+
+// 扫描项目导出类型
+export interface ScanResult {
+  filePath: string;
+  errorCount: number;
+  warningCount: number;
+  fixableErrorCount: number;
+  fixableWarningCount: number;
+  messages: Array<{
+    line: number;
+    column: number;
+    rule: string;
+    url: string;
+    message: string;
+    errored: boolean;
+  }>;
+}
+
+export interface ScanReport {
+  results: ScanResult[];
+  errorCount: number;
+  warningCount: number;
+  runErrors: Error[];
 }

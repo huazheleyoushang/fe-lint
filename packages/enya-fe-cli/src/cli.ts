@@ -8,6 +8,8 @@ import generateTemplate from './utils/generate-template';
 import update from './action/update';
 import { PKG_NAME, PKG_VERSION } from './utils/constants';
 import figlet from 'figlet';
+import scan from './action/scan';
+import ora from 'ora';
 
 const cwd = process.cwd();
 
@@ -60,8 +62,19 @@ program
  .option('-o, --output', '🐛  输出扫描问题的文件日志')
  .option('-i, --include', '扫描指定目录文件')
  .option('--no-ignore', '忽略 ignore 文件')
- .action(async () => {
-    console.log('扫描项目中')
+ .action(async (cmd) => {
+    const checking = ora();
+    checking.start();
+    console.log('开始扫描项目...');
+
+    setTimeout(() => {
+      checking.stop();
+      console.log('扫描完成')
+    }, 3000)
+    scan({
+      cwd,
+      include: cmd.include || cwd,
+    })
   });
 
 // 版本更新
