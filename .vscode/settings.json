@@ -15,6 +15,7 @@
     "Plateform",
     "preinstall",
     "proptypes",
+    "stylelintrc",
     "unspaced",
     "vuepress"
   ]

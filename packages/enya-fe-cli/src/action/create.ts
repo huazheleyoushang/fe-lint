@@ -109,8 +109,10 @@ export default async (options: CreateOptions) => {
   const isInstall = options.isInstall || true;
 
   // 获取输入配置
-  const config: CONFIG = { projectName: options.projectName };
-  config.cwd = options.cwd
+  const config: CONFIG = {
+    projectName: options.projectName,
+    cwd,
+  };
 
   // 当前项目名是否存在
   if (fs.existsSync(path.join(cwd, options.projectName))) {

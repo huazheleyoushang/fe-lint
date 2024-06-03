@@ -34,6 +34,7 @@ export interface CreateOptions {
   // 是否自动下载依赖
   isInstall?: boolean;
 }
+
 export interface InitOptions {
   cwd: string,
   // 检查版本是否需要升级
