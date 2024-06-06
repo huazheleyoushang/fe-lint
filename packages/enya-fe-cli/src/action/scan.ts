@@ -22,6 +22,16 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
     await doPrettier(options)
   }
 
+  // eslint
+  if (config.enableESLint !== false) {
+    try {
+      const eslintResults = await doESLint({...options, pkg, config });
+      results = results.concat(eslintResults);
+    } catch (e) {
+      runErrors.push(e)
+    }
+  }
+
   // stylelint
   if (config.enableStylelint !== false) {
     try {
@@ -32,15 +42,6 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
     }
   }
 
-  // eslint
-  if (config.enableESLint !== false) {
-    try {
-      const eslintResults = await doESLint({...options, pkg, config });
-      results = results.concat(eslintResults);
-    } catch (e) {
-      runErrors.push(e)
-    }
-  } 
 
   // 生成报告
   if (outputReport) {

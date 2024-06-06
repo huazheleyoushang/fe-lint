@@ -2,11 +2,9 @@ import { ESLint } from 'eslint';
 import fg from 'fast-glob';
 import { extname, join } from 'path';
 import { ESLINT_FILE_EXT, ESLINT_IGNORE_PATTERN } from '../../utils/constants';
+import { PKG, Config, ScanOptions } from '../../type';
 import { getESLintConfig } from './getESLintConfig';
 import { formatESLintResults } from './formatESLintResults';
-
-
-import { PKG, Config, ScanOptions } from '../../type';
 export interface DoESLintOptions extends ScanOptions {
   pkg: PKG;
   config?: Config;
@@ -17,10 +15,10 @@ export async function doESLint(options: DoESLintOptions) {
   if (options.files) {
     files = options.files.filter((name) => ESLINT_FILE_EXT.includes(extname(name)));
   } else {
-    files = await fg(`**/*.${ESLINT_FILE_EXT.map((t) => t.replace(/^\./, '')).join(',')}}`, {
+    files = await fg(`**/*.{${ESLINT_FILE_EXT.map((t) => t.replace(/^\./, '')).join(',')}}`, {
       cwd: options.cwd,
       ignore: ESLINT_IGNORE_PATTERN,
-    })
+    });
   }
   
   const eslint = new ESLint(getESLintConfig(options, options.pkg, options.config));

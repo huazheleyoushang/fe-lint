@@ -85,10 +85,9 @@ export default async (options: InitOptions) => {
   let pkg: PKG = fs.readJSONSync(pkgPath);
 
   // 版本检查
-  // TODO:
-  // if (!isTest && checkVersionUpdate) {
-  //   await update();
-  // }
+  if (!isTest && checkVersionUpdate) {
+    await update();
+  }
 
   // 默认 enableEslint true
   if (typeof options.enableESLint === 'boolean') {
@@ -107,7 +106,7 @@ export default async (options: InitOptions) => {
   if (typeof options.enableStylelint === 'boolean') {
     config.enableStylelint = options.enableStylelint
   } else {
-    config.enableStylelint = await chooseEnableStyle(true)
+    config.enableStylelint = await chooseEnableStyle(!/node/.test(config.eslintType))
   }
 
   // 初始化 markdownlint
@@ -126,7 +125,7 @@ export default async (options: InitOptions) => {
 
   if (!isTest) {
     // 检查依赖配置-重写
-    const pkg = await conflictResolve(cwd, options.rewriteConfig);
+    pkg = await conflictResolve(cwd, options.rewriteConfig);
     if (!disableNpmInstall) {
       // 初始化后，安装依赖
       log.info('🚀  安装依赖...');
@@ -141,17 +140,14 @@ export default async (options: InitOptions) => {
   // 更新 pkg.json
   pkg = fs.readJSONSync(pkgPath);
 
-  // 新增script命令
-  if (!pkg.scripts) {
-    pkg.scripts = {};
-  }
-  if (!pkg.scripts[`${PKG_NAME}-scan`]) {
-    pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
-  }
-  if (!pkg.scripts[`${PKG_NAME}-fix`]) {
-    pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
-  }
-
+  // 配置 commit 卡点
+  log.info('配置 git commit 卡点');
+  if (!pkg.husky) pkg.husky = {};
+  if (!pkg.husky.hooks) pkg.husky.hooks = {};
+  pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
+  pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+  log.success('配置 git commit 卡点成功');
 
   // 写入配置
   log.info('写入配置中...');
@@ -159,6 +155,6 @@ export default async (options: InitOptions) => {
   log.success('✅  写入配置成功');
 
   // 完成信息
-  const logs = [`${PKG_NAME} 初始化完成`].join('\r\n');
+  const logs = [`初始化完成`].join('\r\n');
   log.success(logs);
 }
