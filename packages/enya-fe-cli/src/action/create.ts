@@ -23,7 +23,7 @@ const chooseProjectType = async (): Promise<string> => {
 }
 
 /**
- * 选择项目类型
+ * 选择平台类型
  * @param {string}
  * PC/H5
  */

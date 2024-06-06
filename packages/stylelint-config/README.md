@@ -3,7 +3,7 @@
 ## 🔧 安装
 
 ```bash
-npm install stylelint--fe-lint stylelint stylelint-scss --save-dev
+npm install stylelint-fe-lint stylelint stylelint-scss --save-dev
 ```
 
 ## ⚙️ 使用

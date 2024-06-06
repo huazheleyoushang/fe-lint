@@ -28,6 +28,10 @@ export const PLATEFORM_TYPE: Array<{name: string, value: string}> = [
   {
     name: '小程序',
     value: 'applet',
+  },
+  {
+    name: 'HarmonyOS',
+    value: 'harmonyOS'
   }
 ]
 
