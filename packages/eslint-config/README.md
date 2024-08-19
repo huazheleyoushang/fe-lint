@@ -41,14 +41,14 @@ npm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import
 ### 1.2 🔧 安装
 
 ```shell
-npm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue
+pnpm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import vue-eslint-parser eslint-plugin-vue
 ```
 
 ### 1.3 ⚙️ 配置
 
 ```json
 {
-  "extends": ["eslint-fe-lint/vue"]
+  "extends": ["eslint-fe-lint/vue", "prettier"]
 }
 ```
 
@@ -66,21 +66,21 @@ npm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import vu
 ### 2.2 🔧 安装
 
 ```shell
-npm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks
+pnpm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ### 2.3 ⚙️ 配置
 
 ```json
 {
-  "extends": ["eslint-fe-lint/react"]
+  "extends": ["eslint-fe-lint/react", "prettier"]
 }
 ```
 
 ### 2.4 Tips 🏷️ 如果需要无障碍能力
 
 ```shell
-npm i -D eslint-plugin-jsx-a11y
+pnpm i -D eslint-plugin-jsx-a11y
 ```
 
 ```json
@@ -103,7 +103,7 @@ npm i -D eslint-plugin-jsx-a11y
 ### 3.2 🔧 安装
 
 ```shell
-npm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
+pnpm i -D eslint-fe-lint @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
 ```
 
 ### 3.3 ⚙️ 配置
@@ -211,14 +211,14 @@ npm i -D  eslint-plugin-jsx-a11y
 ### 6.2 🔧 安装
 
 ```shell
-npm i -D eslint-fe-lint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue
+pnpm i -D eslint-fe-lint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript vue-eslint-parser eslint-plugin-vue
 ```
 
 ### 6.3 ⚙️ 配置
 
 ```json
 {
-  "extends": ["eslint-fe-lint/typescript/vue"]
+  "extends": ["eslint-fe-lint/typescript/vue", "prettier"]
 }
 ```
 
@@ -237,7 +237,7 @@ npm i -D eslint-fe-lint @typescript-eslint/parser @typescript-eslint/eslint-plug
 ### 7.2 🔧 安装
 
 ```shell
-npm i -D eslint-fe-lint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg
+pnpm i -D eslint-fe-lint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-import eslint-import-resolver-typescript eslint-config-egg
 ```
 
 ### 7.3 ⚙️ 配置

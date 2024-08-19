@@ -85,7 +85,7 @@ program
   .option('-q, --quiet', '❌  仅报告错误信息 - 默认: false')
   .option('-o, --output', '🐛  输出扫描问题的文件日志')
   .option('-i, --include', '扫描指定目录文件')
- .option('--no-ignore', '忽略 ignore 文件')
+  .option('--no-ignore', '忽略 ignore 文件')
   .action(async (cmd) => {
     await installDepsIfThereNo();
 
@@ -100,7 +100,7 @@ program
       outputReport: Boolean(cmd.outputReport),
       ignore: cmd.ignore, // 对应 --no-ignore
     });
-    let type = 'succeed';
+    let type = 'success';
     if (runErrors.length > 0 || errorCount > 0) {
       type = 'fail';
     } else if (warningCount > 0) {

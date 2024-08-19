@@ -9,9 +9,8 @@ import npmType from '../utils/npm-type';
  */
 const checkLatestVersion = async (): Promise<string | null> => {
   const npm = await npmType;
-  // 测试数据
-  const PKG_NAME_TEST = 'eslint-fe-lint'
-  const latestVersion = execSync(`${npm} view ${PKG_NAME_TEST} version`).toString('utf-8').trim();
+
+  const latestVersion = execSync(`${npm} view ${PKG_NAME} version`).toString('utf-8').trim();
 
   if (latestVersion === PKG_VERSION) {
     return null;
@@ -46,10 +45,14 @@ export default async (install = true) => {
       log.info(`[${PKG_NAME}] 当前版本为最新版本，无需更新`);
       return;
     } else if (latestVersion && install) {
+      const update = ora(`[${PKG_NAME}] 存在新版本，将升级至 ${latestVersion}`);
 
+      update.start();
+
+      execSync(`${npm} i -g ${PKG_NAME}`);
+
+      update.stop();
     }
-
-
   } catch (e) {
     // 兜底处理
     checking.stop();

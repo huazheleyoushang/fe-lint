@@ -9,7 +9,7 @@ author:
   link: https://github.com/huazheleyoushang/fe-lint
 ---
 
-# HTML 编码规范
+## HTML 编码规范
 
 :::tip
 [HTML5 规范](http://w3c.github.io/html/semantics.html#the-html-element)
