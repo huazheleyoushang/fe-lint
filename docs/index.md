@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: FE Lint - Feeling
+heroText: FE Lint
 tagline: 前端编码规范
 actionText: 立刻进入 →
 actionLink: /coding/html.md
