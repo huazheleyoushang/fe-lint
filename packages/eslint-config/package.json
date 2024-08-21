@@ -1,7 +1,7 @@
 {
   "name": "eslint-fe-lint",
   "description": "eslint 规范",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./",
