@@ -1,6 +1,6 @@
 {
   "name": "stylelint-fe-lint",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "CSS 规范",
   "main": "index.js",
   "keywords": [
